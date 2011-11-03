@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/chapterfolder
+# catalog-date 2008-02-29 20:00:41 +0100
+# catalog-license lppl
+# catalog-version 2.0.1
 Name:		texlive-chapterfolder
 Version:	2.0.1
 Release:	1
@@ -46,6 +52,7 @@ makes easy changing the name of a folder, for example.
 #- source
 %doc %{_texmfdistdir}/source/latex/chapterfolder/chapterfolder.dtx
 %doc %{_texmfdistdir}/source/latex/chapterfolder/chapterfolder.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -56,3 +63,5 @@ makes easy changing the name of a folder, for example.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
