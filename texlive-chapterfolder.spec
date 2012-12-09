@@ -53,3 +53,18 @@ makes easy changing the name of a folder, for example.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Tue Jan 03 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.0.1-2
++ Revision: 750102
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 2.0.1-1
++ Revision: 718034
+- texlive-chapterfolder
+- texlive-chapterfolder
+- texlive-chapterfolder
+- texlive-chapterfolder
+- texlive-chapterfolder
+
