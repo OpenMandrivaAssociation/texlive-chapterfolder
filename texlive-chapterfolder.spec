@@ -6,7 +6,7 @@
 # catalog-version 2.0.1
 Name:		texlive-chapterfolder
 Version:	2.0.1
-Release:	5
+Release:	6
 Summary:	Package for working with complicated folder structures
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chapterfolder
