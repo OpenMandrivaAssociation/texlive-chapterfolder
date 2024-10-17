@@ -3,7 +3,7 @@ Version:	15878
 Release:	2
 Summary:	Package for working with complicated folder structures
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chapterfolder
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/chapterfolder
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chapterfolder.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chapterfolder.doc.r%{version}.tar.xz
