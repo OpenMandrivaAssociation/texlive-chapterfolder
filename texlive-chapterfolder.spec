@@ -9,6 +9,7 @@ Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chapterfolder.r%{
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chapterfolder.doc.r%{version}.tar.xz
 Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chapterfolder.source.r%{version}.tar.xz
 BuildArch:	noarch
+BuildRequires:	make
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
