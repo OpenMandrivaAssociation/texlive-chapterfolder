@@ -1,51 +1,29 @@
-Name:		texlive-chapterfolder
-Version:	15878
-Release:	2
+%global tl_name chapterfolder
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.0.1
+Release:	%{tl_revision}.1
 Summary:	Package for working with complicated folder structures
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/chapterfolder
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chapterfolder.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chapterfolder.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chapterfolder.source.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/chapterfolder.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/chapterfolder.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/chapterfolder.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	make
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package simplifies working with folder structures that
-match the chapter/section/subsection structure. It provides
-macros to define a folder that contains the file for a
-chapter/section/subsection, and provides macros that allow
-inclusion without using the full path, rather the path relative
-to the current folder of the chapter/section/subsection. It
-makes easy changing the name of a folder, for example.
+This package simplifies working with folder structures that match the
+chapter/section/subsection structure. It provides macros to define a
+folder that contains the file for a chapter/section/subsection, and
+provides macros that allow inclusion without using the full path, rather
+the path relative to the current folder of the
+chapter/section/subsection. It makes easy changing the name of a folder,
+for example.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/chapterfolder/chapterfolder.sty
-%doc %{_texmfdistdir}/doc/latex/chapterfolder/chapterfolder.pdf
-#- source
-%doc %{_texmfdistdir}/source/latex/chapterfolder/chapterfolder.dtx
-%doc %{_texmfdistdir}/source/latex/chapterfolder/chapterfolder.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
